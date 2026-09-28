@@ -1,0 +1,12 @@
+:root{
+    --font-courier-new: "Courier New";
+    --red: rgb(237, 21, 36);
+    --white: #fff;
+    --black: #030303;
+    --big-text: 32px;
+    --small-text: 24px;
+}
+body{
+    background-color: var(--black);
+    font-family: var(--font-courier-new);
+}

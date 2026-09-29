@@ -1,12 +1,75 @@
-:root{
-    --font-courier-new: "Courier New";
-    --red: rgb(237, 21, 36);
-    --white: #fff;
-    --black: #030303;
-    --big-text: 32px;
-    --small-text: 24px;
-}
 body{
     background-color: var(--black);
     font-family: var(--font-courier-new);
+}
+navbar{
+    background-color: var(--red);
+    color: white;
+}
+    
+.navbar-brand{
+    font-size: 1.3cm;
+    color: white;
+}
+    
+.nav-item{
+    color: white;
+}
+    
+.alert alert-info{
+    margin-left: 1cm;
+}
+.sidebar{
+    background-color: var(--light-color);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 12px;
+    width: 300px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.sidebar nav ul{
+    margin-top: 20px;
+    padding: 0 20px 10px 20px;
+    list-style: none;
+}
+.sidebar nav ul li a{
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--big-text);
+}
+.sidebar ul li{
+    padding: 10px 0;
+}
+.perfil{
+    display: inline;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    justify-content: space-between;
+    gap: 10px;
+}
+.perfil.com-footer {
+    margin-bottom: 90px;
+}
+.perfil span{
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--big-text);
+}
+.perfil img.circle {
+    object-fit: cover;
+}
+.button_sair{
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--big-text);
 }

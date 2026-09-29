@@ -7,12 +7,12 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <title>Snoopy Library</title>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="static/css/vars.css">
+    <link rel="stylesheet" href="static/css/style.css">
     <link href="css/courier-new-maisfontes.d2f2.zip" rel="stylesheet">
 </head>
-<body class="p-3 m-0 border-0 bd-example m-0 border-0">
-    <!-- Example Code Start-->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<body class="m-0 p-0">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(237, 21, 36); border-color: rgb(211,211,211)">
       <div class="container-fluid">
         <img src="static/img/reading snoopy.jpg" alt="Snoopy Library" width="100">
         <a class="navbar-brand" href="#">Snoopy Library</a>
@@ -46,7 +46,53 @@
         </div>
       </div>
     </nav>
-    <!-- Example Code End -->
-  
+    <div class="sidebar">
+            <nav class="sidebar__navigation">
+                <ul>
+                    <li>
+                        <a href="index.php">
+                            <i class="fa fa-home"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin/salvos.php">
+                            <i class="fa fa-bookmark"></i>
+                            <span>Salvos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin/perfil.php">
+                            <i class="fa fa-user"></i>
+                            <span>Perfil</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="post">
+                <div class="post_content">
+                    <button class="new_post" id="open-modal">
+                        <span>Novo Post</span>
+                    </button>
+                </div>
+            </div>
+            <hr>
+            <div class="perfil <?php echo (!isset($_SESSION["logado"]) || $_SESSION["logado"] !== TRUE) ? 'com-footer' : ''; ?>">
+                <?php if ((isset($_SESSION["logado"]))&&($_SESSION["logado"]=== TRUE)) {
+                    echo "<span>".$_SESSION["nome"]."</span>";
+                    echo "<img src='".$_SESSION["foto"]."' style='border-radius: 50%; border: 4px solid white; object-fit: cover;' alt='foto de perfil' width='45' height='45'>";
+                }
+                else {
+                    echo "<span>Nome</span>";
+                    echo "<img src='img/no_login.png' style='border-radius: 50%; border: 4px solid white; object-fit: cover;' alt='foto de perfil' width='45' height='45'>";
+                }
+                ?>
+            </div>
+            <hr>
+            <span class="button_sair">
+                <a href="admin/logout.php">Sair</a>
+            </span>
+        </div>
+        <div class="main-content"></div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 create database if not exists library;
 use library;
 
-create table livros (
+create table books (
     id int auto_increment primary key,
     title varchar(50),
     author varchar(40),
